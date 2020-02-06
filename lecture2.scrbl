@@ -254,7 +254,7 @@ computer check our work.
 
 @section{BNF Grammars -- A short-hand for simple judgments}
 Anyone familiar with compilers or programming languages may have seen an
-alternative method of describing syntax---BNF grammars before.
+alternative method of describing syntax before---BNF grammars.
 BNF grammars are a much more terse description of a syntax, and most well-formed
 grammars ARE judgments, in a more economical notation.
 
@@ -314,6 +314,7 @@ defines a single step of reduction.
 What happens when an expression that eliminates a value has a value to
 eliminate.
 We can define this on paper as the following judgment.
+
 @box{@emph{e@sub{1}} → @emph{e@sub{2}}}
 @verbatim{
 
@@ -346,7 +347,7 @@ Similarly, by relating the expressions @tt{(z + @emph{e})} and @tt{@emph{e}}, we
 declare that @tt{z} behaves like the natural number 0 if we consider
 @tt{+} to be the mathematical addition function on natural numbers.
 
-We have now rebuilt enough of the universe taht we can formally prove some
+We have now rebuilt enough of the universe that we can formally prove some
 interesting mathematical facts.
 For example, we can formally zero plus one is equal to
 one.
@@ -355,8 +356,8 @@ First, we must interpret @tt{@emph{e@sub{1}} → @emph{e@sub{2}}} as meaning
 Then we interpret @tt{z} as 0, and @tt{+} as addition, and @tt{(s z)} as one.
 Now we construct the derivation.
 @verbatim{
------------- "Step-Add-Zero"]
-(z + (s z) → (s z)
+------------ "Step-Add-Zero"
+(z + (s z)) → (s z)
 }
 
 Note that to interpret this as a proof of things we understand intuitively, like
@@ -445,14 +446,14 @@ to know.
 
 To model the interpreter, we define the judgment @racket[→*].
 Intuitively, this judgment applies the @racket[→] judgment any number of times,
-to any subexpression.
+to any sub-expression.
 We start by declaring that an expression can take no steps, or, step to itself
 @racket[(→* e_1 e_1)].
 Next, we have a rule saying that if an expression steps in the
 @racket[→] judgment, then it can step in the @racket[→*] judgment.
 That is, any expression can take a single step.
 Then, we have a rule that says we can evaluate from @racket[e_1] to
-@racket[e_2], and then continue evaluating @racket[e_2] to racket[e_3].
+@racket[e_2], and then continue evaluating @racket[e_2] to @racket[e_3].
 
 Before explaining the rest of the rules, we should carefully look at the rule
 @racket["Trans"].
@@ -528,7 +529,7 @@ The same derivation in on-paper notation is below:
 @emph{Lemma 1 (One Plus One Equals Two):}
 @tt{((s z) + (s z)) →* (s (s z))}
 
-@emph{Proof}
+@emph{Proof:}
 @verbatim{
 --------------------------------- [Step-Add-Add1]      ------------------------------- [Step-Add-Zero]
 ((s z) + (s z)) → (z + (s (s z)))                       (z + (s (s z))) → (s (s z))))

@@ -32,7 +32,7 @@ Your language should include
   While you should model natural numbers inductively, you may use decimal
   notation in examples.
   If you need to use decimal numbers in Redex, you can use the following
-  meta-function to convert between representations.
+  metafunction to convert between representations.
   @examples[
   (require redex/reduction-semantics)
   (define-language L)
@@ -59,7 +59,7 @@ Your language should include
     true)}.}
     @item{Booleans and If}
     @item{Functions and application}
-    @item{Dictionary: n-ary tuple of key/value pairs with key-based projections.
+    @item{Dictionaries: n-ary tuples of key/value pairs with key-based projections.
 
     Keys should be symbols, such as @tt{a} or @tt{b}, and values should be either
     natural numbers or booleans.
@@ -118,7 +118,7 @@ they produce valid observations in the evaluation function.
 Create a dictionary mapping the symbol @tt{a} to the value @tt{5}, @tt{b} to the
 value @tt{120}, and @tt{c} to the value @tt{false}.
 
-Prove that projecting @tt{b} from this dictionary evaluates to @tt{120}
+Prove that projecting @tt{b} from this dictionary evaluates to @tt{120}.
 
 @subsection{About numbers}
 Implement a function in your langauge called @tt{is-zero?}.
@@ -143,17 +143,23 @@ conversions, explaining which rules are required.
 You may skip steps when there are multiple applications of the same rule or
 uninteresting rules like transitivity, but be sure to list which rule you
 elide.
+
 @tt{eval (is-zero? 1) = false}
+
 @tt{eval (is-zero? 2) = false}
 
 Implement the addition function @tt{+}.
 Note that you were not allowed to add @tt{+} to your model.
 
-Prove that @tt{eval (+ 0 0) = 0} by giving derivation trees
+Prove that @tt{eval (+ 0 0) = 0} by giving derivation trees.
 
 Prove the following equationally.
 It may help to prove and reuse some lemmas.
+
 @tt{eval (+ 0 1) = 1}
+
 @tt{eval (+ 1 1) = 2}
+
 @tt{eval (+ 1 2) = 3}
+
 @tt{eval (+ 2 2) = 4}

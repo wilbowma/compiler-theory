@@ -24,7 +24,7 @@ When we defined language, we said a language is:
 @item{Some shared properties}
 ]
 We now have the ability to model complete languages from a single foundational
-mathematical framework, the inductively defined judgment.
+mathematical framework, the inductively-defined judgment.
 We can model their syntax, model rewrites, and model evaluation of whole
 programs.
 This gives us a way of modeling a collection of expressions and modeling
@@ -45,9 +45,9 @@ evaluate add correctly.
 But we haven't @emph{formalized} that intuition in a @emph{judgment}, so we
 can't prove it.
 
-The way we foramlize this is with @emph{type systems}.
+The way we formalize this is with @emph{type systems}.
 A type system is a judgment that encodes what it means for a program to be
-well behaved, so that we can make formal, provable predictions about allll
+well behaved, so that we can make formal, provable predictions about all
 well-typed programs.
 Let's design a type system.
 
@@ -169,7 +169,7 @@ philosophically inclined.
 }
 
 Note that the language NatBool exists @emph{before} the type system.
-We can write down expressions that aren't well typed, and we can even try to
+We can write down expressions that aren't well-typed, and we can even try to
 evaluate them.
 We build the type system merely for its predictive power.
 
@@ -178,7 +178,7 @@ Let's build a type system.
 
 @section{A Type System for NatBool}
 The first thing we need when building a type system is some types.
-We can define a new judgment (new syntax) for what is a valid type
+We can define a new judgment (new syntax) for what is a valid type.
 For NatBool, we have two types: @tt{Nat} and @tt{Bool}.
 The type @tt{Nat} will, intuitively, be assigned to expressions that compute to values that represnet natural numbers.
 Similarly, @tt{Bool} will be assigned to expressions that compute to values that represent booleans.
@@ -322,7 +322,7 @@ This gives us the final type system:
 
 
 Now we can predict (although we haven't proven it) whether evaluation will suceed.
-We know @tt{s true} won't evaluate property, and sure enough, it isn't well typed.
+We know @tt{s true} won't evaluate property, and sure enough, it isn't well-typed.
 If we try to build a derivation, we get stuck:
 @verbatim{
       X
@@ -333,13 +333,13 @@ If we try to build a derivation, we get stuck:
 }
 
 If we prove some other facts about our type system, like that every term has a
-unique type, we could @emph{formally} prove that this term @emph{cannot} be well
-typed, since @tt{true}'s unique type is @tt{Bool}, which is not equal to
+unique type, we could @emph{formally} prove that this term @emph{cannot} be
+well-typed, since @tt{true}'s unique type is @tt{Bool}, which is not equal to
 @tt{Nat}.
 We're not going there in this class.
 
 We can also formally prove that particular terms will definitely evaluate properly.
-For example, @tt{(s z) + (s z)} is well typed at type @tt{Nat}:
+For example, @tt{(s z) + (s z)} is well-typed at type @tt{Nat}:
 @verbatim{
 
 --------- T-Z             --------- T-Z
@@ -490,7 +490,7 @@ Fantastic.
 We can now predict the success of function applications.
 
 Finally, we need a rule for names @tt{x}.
-Names are always complicated, and the typing rule is no exceptions.
+Names are always complicated, and the typing rule is no exception.
 It behaves like neither an introduction nor elimination form.
 It's type is not obvious just from its structure, nor is anything eliminating
 something whose type is obvious.
@@ -575,7 +575,7 @@ This gives us the type system below.
 @section{Type Systems and Type Annotations}
 This type system is a little unusual if you're familiar with typed languages.
 Our language has no annotations at all.
-We can actually prove that a function multiple types:
+We can actually prove that a function has multiple types:
 @verbatim{
 x:Nat ⊢ x : Nat
 ---------------------
@@ -596,12 +596,12 @@ In fact, this is even good from the perspective of code reuse.
 However, we have to construct a derivation manually: the syntax of programs is
 not sufficient to infer a type.
 In general, this means the type system is undecidable: we cannot decide if a
-given program is well typed.
+given program is well-typed.
 
 We can see this more clearly when we try to translate the judgment into Redex.
 The only way to write the judgment is as a modeless judgment.
 We cannot assign the type as an output, meaning it can be inferred, because the
-argument type for functions would need to come out of thin-air.
+argument type for functions would need to come out of thin air.
 This manifests in Redex telling us that that a pattern variable is unbound when
 we try to define the judgment.
 
@@ -660,10 +660,9 @@ we try to define the judgment.
   (⊢ Γ (e_1 e_2) : B)]))
 ]
 
-This is why usually typed language will require an annotation on the argument
+This is why typed languages will usually require an annotation on the argument
 name.
-We can add a second syntax for functions that comes annotated with its
-arguments.
+We can add a second syntax for functions with annotated arguments.
 For these functions, we can easily decide all types.
 And we can see that by defining a moded judgment in which the type is an output,
 and Redex will happily infer types for us.
@@ -726,7 +725,7 @@ and Redex will happily infer types for us.
 
 Unfortunately, now that we have annotations, our functions are less generic.
 We must define separate identity functions for natural numbers and booleans,
-even though they behave the same, and work with ill-typed arguments
+even though they behave the same, and work with ill-typed arguments.
 
 @examples[#:eval eg1
 (judgment-holds (⊢ · (λ (x : Nat) x) : A) A)
