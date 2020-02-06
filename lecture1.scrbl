@@ -51,16 +51,16 @@ The distinction between "analytic" and "synthetic" is not a formal distinction,
 but a fuzzier, human distinction.
 
 Most people are familiar with analytic math.
-This kind of math teach you to break a problem down into simple, well-understood
+This kind of math teaches you to break a problem down into simple, well-understood
 parts.
 In calculus, we break things down in to real numbers, functions on real numbers,
 equations between real numbers, etc.
-If we want to answer a question, like how big is the earth, we can define
+If we want to answer a question, like "how big is the earth", we can define
 "bigness" and "the earth" as real-numbery things and use calculus.
 
 In synthetic math, we define a new theory, with new axioms, to describe the
 things we're studying.
-We do not break things down into a big theory of things we already understand;
+We do not break things down into a big theory of things we already understand,
 but build them up from a small set of axioms.
 
 Most of the work on compiler correctness, and indeed much work in programming
@@ -92,7 +92,7 @@ It states that:
 "A", then I can conclude "B".}
 ]
 
-We can all agree that this seems, intuitively, like a good logicaly reasoning
+We can all agree that this seems, intuitively, like a good logical reasoning
 principle.
 
 This refers to the idea of @emph{judgment}, any statement I can make in my
@@ -122,7 +122,7 @@ A    B    C
 
 For the pieces of a judgment, we can use any symbol we like.
 We can use English letters like "A", "B", or "meow", or numbers like "1" "42" or
-"-0" or, random symbols like "⊢", "+", or "↑".
+"-0", or random symbols like "⊢", "+", or "↑".
 Whatever symbol is there, remember: @emph{never assume you know what it means}.
 Remember, we are rebuilding the entire universe, so nothing exists except what
 we've defined.
@@ -251,8 +251,8 @@ It states that:
 @itemlist[
 @item{I can define a judgment by cases that recursively refers to itself, so
 long as something gets small in the premise of each case.}
-@item{If I have an inductively define judgement, @emph{J}, with rules
-@emph{R@sub{0}},@emph{R@sub{1}},...,@emph{R@sub{N}}, and I want prove some property holds on
+@item{If I have an inductively define judgment, @emph{J}, with rules
+@emph{R@sub{0}}, @emph{R@sub{1}}, ..., @emph{R@sub{N}}, and I want prove some property holds on
 instances of @emph{J}, then it suffices to prove:
 @itemlist[#:style 'numbered
 @item{If P holds on the recursive @tech{subderivations} of R@sub{0}, then P holds for the conclusion of R@sub{0}}
@@ -346,7 +346,7 @@ so we allow the exception.
 We now have enough tools to being defining a language.
 But what is a language?
 
-When polls, most students start describing a language features like the following:
+When polled, most students start describing a language features like the following:
 @itemlist[
 @item{Surface syntax}
 @item{Operations}

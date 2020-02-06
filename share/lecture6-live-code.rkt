@@ -163,7 +163,7 @@
    (⊢ Γ (e_1 e_2) : B)])
 
 ;; Derivation (⊢ Γ e : A) -> Derivation (eval e o)
-;; Type safety: If a term is well typed, then evaluates to an observation.
+;; Type safety: If a term is well-typed, then evaluates to an observation.
 ;; A proof of this is a program that transforms a typing derivation into an
 ;; evaluation derivation.
 (require racket/match)
@@ -213,7 +213,7 @@
 ;; So we instead prove progress and preservation.
 
 ;; Derivation (⊢ Γ e : A) -> Derivation (e ->* e') -> Derivation (⊢ Γ e' : A)
-;; If a term is well typed, and steps to a new term e', e' should have the same type.
+;; If a term is well-typed, and steps to a new term e', e' should have the same type.
 ;; This means we have two inputs: the derivation for e being well-typed (d1),
 ;; and the derivation for e stepping to e'.
 (define (preservation d1 d2)

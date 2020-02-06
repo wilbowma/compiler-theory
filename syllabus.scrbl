@@ -22,6 +22,7 @@ correctness research, but will be able to read and critically analyze such
 research.
 Students will learn to interpret the formal notation used in compiler
 verification research, analyze compiler correctness research papers, and compare
+them.
 
 The course assumes no familiarity with programming languages theory, compiler
 construction, or low level programming.
@@ -103,8 +104,8 @@ class.
 During class, we will discuss the papers the papers.
 One student per paper will be assigned to lead the discussion.
 
-Each critique should be ~2 paragraph.
-Start by briefly summarzing the paper, then describing its strengths and
+Each critique should be ~2 paragraphs.
+Start by briefly summarizing the paper, then describing its strengths and
 weaknesses.
 
 The summaries and critiques will be graded based on the understanding of the
@@ -145,7 +146,7 @@ That is, show that the translation satisfies one of the correctness properties
 we discussed, but fails to satisfy another.
 
 The project will involve writing up the formal definitions of the source,
-target, and the translation, a counter example demonstrating incorrectness, and
+target, and the translation, a counterexample demonstrating incorrectness, and
 a semi-formal argument for correctness.
 
 At the end of the course, the project write-ups will be critiqued by the class
@@ -191,7 +192,7 @@ the course.
 
   @item{Describe programming language features using formal notation.}
 
-  @item{Recognize different compiler correctness theorem.}
+  @item{Recognize different compiler correctness theorems.}
 
   @item{Compare and contrast the strengths and weaknesses of different compiler
   correctness theorems.}

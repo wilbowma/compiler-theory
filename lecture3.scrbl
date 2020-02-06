@@ -7,13 +7,13 @@
 @title[#:tag "" #:tag-prefix "notes:lec3"]{Lecture 3 -- The First Complete Model of a Language}
 
 @section{To a Model of an Interpreter}
-So far, we've seen how to model (1) a collection of expressions (2) a reduction
-judgment @tt{→} which performs obvious computations (3) a conversion judgment
+So far, we've seen how to model (1) a collection of expressions, (2) a reduction
+judgment @tt{→} which performs obvious computations, and (3) a conversion judgment
 @tt{→*} which applies reduction transitivily and under all sub-expressions.
 
 The conversion judgment is ... similar to an interpreter, but isn't quite.
-The problem is that it does not necessarily run out program "to completion".
-We can construct derivations that convert out program to a new expression after
+The problem is that it does not necessarily run our program "to completion".
+We can construct derivations that convert our program to a new expression after
 0 steps, or 1 step, or 5 steps of reduction.
 But an interpreter should run a program until it is complete, and there are no
 more reduction steps possible.
@@ -100,7 +100,7 @@ So let's add first-class functions!
 First-class functions ("functions", from now on) are popular in PL theory
 because they are a single feature that can represent many features in a small
 model.
-We can encode objects, threads, co-routines, loops, actors, etc all using
+We can encode objects, threads, co-routines, loops, actors, etc. all using
 first-class functions.
 This means we can do a relatively small amount of math and apply it to a large
 number of programming language features.
@@ -125,7 +125,7 @@ In general, programming language models add features by adding some
 computation.
 We start by adding the syntax of the @tech{introduction forms} and
 @tech{elimination forms}.
-Then we add a single reduction rule for each @tech{elimnation form} applied to
+Then we add a single reduction rule for each @tech{elimination form} applied to
 each @tech{introduction form}.
 We can predict how many reduction rules we should have: there ought to be
 @racket[n*m] rules, where we have @racket[n] @tech{introduction forms} and

@@ -21,9 +21,9 @@ This should include:
 @section{Proof by Induction/Type Safety}
 Prove the following cases of progress and preservation:
 @itemlist[
-@item{lambda and applcation}
+@item{lambda and application}
 @item{bool and if}
-@item{dictionaries formation and projection}
+@item{dictionary formation and projection}
 ]
 
 Note that the formal statements below are somewhat different from what we proved

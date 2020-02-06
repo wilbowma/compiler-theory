@@ -5,9 +5,9 @@
   scribble/example)
 
 @(define (theorem . rest)
-   (apply list (emph "Theorem:") rest))
+   (apply list (emph "Theorem: ") rest))
 @(define (proof . rest)
-   (apply list (emph "Proof:") rest))
+   (apply list (emph "Proof: ") rest))
 
 @title[#:tag "" #:tag-prefix "notes:lec5"]{Lecture 5 and 6 -- Proof by
 Induction}
@@ -15,7 +15,7 @@ In @secref[#:tag-prefixes '("notes:lec4") ""] we learend about type systems.
 The point of a type system is to make predictions.
 But we don't just want to make predictions about a single term, like @tt{z}.
 We want to make predictions about whole classes of terms, like all terms of type
-@tt{Nat}, or any well typed term.
+@tt{Nat}, or any well-typed term.
 
 A prediction is a theorem, so we need to write a proof to be sure our prediction
 is true.
@@ -34,8 +34,8 @@ derivation.
 
 For this, we need Induction, our second axiom:
 
-If I have an inductively defined judgement, @emph{J}, with rules
-@emph{R@sub{0}},@emph{R@sub{1}},...,@emph{R@sub{N}}, and I want prove some
+If I have an inductively defined judgment, @emph{J}, with rules
+@emph{R@sub{0}}, @emph{R@sub{1}}, ..., @emph{R@sub{N}}, and I want prove some
 property @emph{P} holds for all derivations of @emph{J}, then it suffices to
 prove:
 @itemlist[#:style 'numbered
@@ -122,17 +122,18 @@ We'll start simple:
 
 @theorem{(For all m,) @tt{eval(0 + @emph{m})} = @emph{m}}
 
-This theorem says that evaluating 0 plus any @emph{m} equal @emph{m}.
+This theorem says that evaluating 0 plus any @emph{m} equals @emph{m}.
 Often, we would leave out of the explicit quantification over all possible
 @emph{m} in the theorem statement.
-I've written it explicitly in parenthesis to suggest this quantification is
+I've written it explicitly in parentheses to suggest this quantification is
 "obvious" (to a working PL theorist) from context.
 
 The theorem is probably intuitively true to anyone reading it.
 And of course, it is true.
-But true is not the same as being proven, so lets see if we can prove it.
+But true is not the same as being proven, so let's see if we can prove it.
 
 @theorem{(For all m,) @tt{eval(0 + @emph{m})} = @emph{m}}
+
 @proof{Trivial, by the following derivation
 
 @verbatim{
@@ -156,6 +157,7 @@ If we try to do the proof that @tt{eval(@emph{m} + 0) = @emph{m}}, it would be
 so easy:
 
 @theorem{(For all m,) @tt{eval(@emph{m} + 0)} = @emph{m}}
+
 @proof{ ... erm, there is no reduction rule to apply, so we can't (immediately)
 build a derivation.
 
@@ -197,7 +199,7 @@ eval(n + 0) = n
 }
 
 
-But it's not clear how to combibe that fact with something of the shape
+But it's not clear how to combine that fact with something of the shape
 @tt{(s n) + 0 ->* n + (s 0)} to build any derivation.
 So how do we proceed?
 }
@@ -215,7 +217,7 @@ This is a pretty common trick in programming languages work.
 If you see a judgment that seems correct, but different than the obvious thing,
 you should ask yourself if this judgment is easier to use in proofs.
 
-We change the reduction judgment to the following
+We change the reduction judgment to the following:
 
 @verbatim{
 [ m -> m ]
@@ -231,7 +233,9 @@ z + m -> m
 Note that now addition reduces to an addition where both sub-expressions are
 inductively smaller.
 This is a good sign that it will work better in inductive proofs.
+
 @theorem{(For all m,) @tt{eval(@emph{m} + 0)} = @emph{m}}
+
 @proof{ ... erm, there is no reduction rule to apply, so we can't (immediately)
 build a derivation.
 
@@ -258,7 +262,7 @@ Here, we're doing induction on @tt{m : Nat}, and we are in the case where
 @tt{n : Nat}.
 This is the tricky part of an inductive proof.
 
-Note that we can easily show that @tt{(s n) + 0 -> s (n + 0)}
+Note that we can easily show that @tt{(s n) + 0 -> s (n + 0)}.
 
 Note we can now easily combine this with the fact we get from the induction
 hypothesis.
@@ -285,7 +289,7 @@ We have now shown:
 ->* s (n + 0)
 ->* s n
 }
-Which means @tt{eval((s n) + 0) = s n}
+Which means @tt{eval((s n) + 0) = s n}.
 }
 ]
 }
@@ -526,11 +530,11 @@ We could have written the code more cleanly by using a helper function,
 
 Unfortunately, when we try to finish the proof case for
 @tt{n + m}, we discover that our theorem isn't general enough.
-I leave it as an exercise to the read to discover the fix.
+I leave it as an exercise to the reader to discover the fix.
 (Hint: evaluation and equality are different, but similar, judgments.)
 
 Formally, a proof can't just be any function, though.
-It must be a complete, bug free function.
+It must be a complete, bug-free function.
 It must always return something of the right type, handle all cases of any data
 it consumes, and always terminate.
 It's hard to trust a proof written in Racket since Racket can't check any of
