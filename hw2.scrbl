@@ -13,7 +13,7 @@ Extend your model from HW1 with a type system.
 This should include:
 @itemlist[
 @item{A syntactic category for types.}
-@item{A type for nat, bool, functions, and records.}
+@item{A type for nat, bool, functions, and dictionaries.}
 @item{A syntactic category for typing environments.}
 @item{Typing rules.}
 ]
@@ -35,7 +35,7 @@ If you find you need any additional lemmas, you may state them and use them
 without proof (as long as they are not substantially similar to the lemma you
 are trying to prove).
 
-@emph{Lemma 1 (Progress)}: If @tt{· ⊢ e : A} then either @tt{e} is an @tt{o}, or @tt{e → e'}.
+@emph{Lemma 1 (Progress)}: If @tt{· ⊢ e : A} then either @tt{e} is an @tt{o}, or @tt{e →* e'}.
 
 @emph{Lemma 2 (Preservation)}: If @tt{· ⊢ e : A} and @tt{e → e'} then @tt{· ⊢ e' : A}.
 
