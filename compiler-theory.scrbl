@@ -29,6 +29,7 @@ My goals with this course are:
 
 @subsection{Announcements}
 @itemlist[
+@item{Feb. 10, 2020 11:01 -- Remove logical relations from calendar; replace by linking and assembly, which actually happened.}
 @item{Feb. 5, 2020 21:57 -- Added Lecture 5 notes (part 1 of proof by induction).}
 @item{Feb. 3, 2020 21:40 -- Added homework two, due Feb 24, 2020 23:59 by email.}
 @item{Feb. 3, 2020 21:21 -- Added live code from Lecture 6. @url{share/lecture6-live-code.rkt}.}

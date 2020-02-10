@@ -42,6 +42,7 @@ This calendar is subject to change.
      "Wednesday, Apr. 8, 2020"
      "Wednesday, Apr. 15, 2020"))
 
+@;"Type safety is weak; program equivalence, logical relations!"
 @(define activity
    '("Syllabus, Math, and Rebuilding the Universe"
     "Modeling Languages"
@@ -55,7 +56,7 @@ This calendar is subject to change.
     "Proof by Induction, and more Type Systems!"
     "Type system for imperative languages, and more type safety!"
     "Homework 2 Assigned!"
-    "Type safety is weak; program equivalence, logical relations!"
+    "Linking, and modeling assembly"
     "Modeling Compilers!"
     "CPS and Closure Conversion!"
     "READING BREAK!"
@@ -94,4 +95,3 @@ This calendar is subject to change.
            (list x y))
          dates
          activity))]
-
