@@ -6,7 +6,7 @@
 
 @title[#:tag "" #:tag-prefix "notes:lec5"]{Lecture 5 and 6 -- Proof by
 Induction}
-In @secref[#:tag-prefixes '("notes:lec4") ""] we learend about type systems.
+In @secref[#:tag-prefixes '("notes:lec4") ""] we learned about type systems.
 The point of a type system is to make predictions.
 But we don't just want to make predictions about a single term, like @tt{z}.
 We want to make predictions about whole classes of terms, like all terms of type
@@ -48,10 +48,10 @@ proof technique, then we can believe the proof.
 We can't prove this axiom is reasonable; we trust that it is reasonable.
 It's counter-intuitive, since it allows us to assume the very thing we're trying
 to prove (albeit, assume it in a "smaller" way).
-But so far, no proofs by induction have been at the root of an proof of an
+But so far, no proofs by induction have been at the root of a proof of an
 untrue theorem, so it seems okay to use.
 
-A good rule of thumb is that any time we have a theorem with some meta-varaible
+A good rule of thumb is that any time we have a theorem with some meta-variable
 with no additional structure, like @emph{e}, we need induction.
 This isn't always true.
 We may be able to appeal to previously proved lemmas that will let us build
@@ -299,7 +299,7 @@ What @emph{is} an induction hypothesis?
 These are all questions I've had too.
 I didn't really understand proofs until I understood that proofs @emph{are}
 programs.
-A theorem is a function: is has inputs (its premises) and produces outputs (its
+A theorem is a function: it has inputs (its premises) and produces outputs (its
 conclusion).
 An inductive proof is a recursive function: it pattern matches on its input,
 deconstructing a derivation, builds a new derivation, and occassionally recurs
