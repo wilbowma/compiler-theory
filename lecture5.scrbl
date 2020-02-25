@@ -4,11 +4,6 @@
   racket/sandbox
   scribble/example)
 
-@(define (theorem . rest)
-   (apply list (emph "Theorem: ") rest))
-@(define (proof . rest)
-   (apply list (emph "Proof: ") rest))
-
 @title[#:tag "" #:tag-prefix "notes:lec5"]{Lecture 5 and 6 -- Proof by
 Induction}
 In @secref[#:tag-prefixes '("notes:lec4") ""] we learend about type systems.

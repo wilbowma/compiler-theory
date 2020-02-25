@@ -64,3 +64,4 @@ My goals with this course are:
 @include-section{lecture4.scrbl}
 @include-section{hw2.scrbl}
 @include-section{lecture5.scrbl}
+@include-section{lecture10.scrbl}

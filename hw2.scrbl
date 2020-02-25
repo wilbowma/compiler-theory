@@ -28,30 +28,50 @@ Prove the following cases of progress and preservation:
 
 Note that the formal statements below are somewhat different from what we proved
 in class.
-The versions presented in class are the intuitive statements we got to from first principles.
+The versions presented in class are the intuitive statements we got to from
+first principles.
 The versions below should be sufficient.
 
 If you find you need any additional lemmas, you may state them and use them
 without proof (as long as they are not substantially similar to the lemma you
 are trying to prove).
 
-@emph{Lemma 1 (Progress)}: If @tt{· ⊢ e : A} then either @tt{e} is an @tt{o}, or @tt{e →* e'}.
+@emph{Lemma 1 (Progress)}: If @tt{· ⊢ e : A} then either @tt{e} is an @tt{v}, or
+@tt{e →+ e'}.
 
-@emph{Lemma 2 (Preservation)}: If @tt{· ⊢ e : A} and @tt{e → e'} then @tt{· ⊢ e' : A}.
+That is, either a well-typed expression is a value, or it can take at least one
+step of reduction.
 
-The canonical forms lemma is a commonly used lemma that simplifies some reasoning:
+@emph{Lemma 2 (Preservation)}: If @tt{· ⊢ e : A} and @tt{e →+ e'} then @tt{· ⊢
+e' : A}.
 
-@emph{Lemma 3 (Canonical Forms)}: If @tt{· ⊢ e : A} then either
+That is, if a closed well-typed expression takes a step, then it is still of the
+same type.
+
+The canonical forms lemma is a commonly used lemma that simplifies some
+reasoning:
+
+@emph{Lemma 3 (Canonical Forms)}: If @tt{· ⊢ v : A} then either
 @itemlist[
-@item{@tt{A = Nat} and @tt{e = z}, or}
-@item{@tt{A = Nat} and @tt{e = (s n)}, or}
-@item{@tt{A = A -> B'} and @tt{e = λx.e'}, or}
-@item{@tt{A = Bool} and @tt{e = true}, or}
-@item{@tt{A = Bool} and @tt{e = false}}
+@item{@tt{A = Nat} and @tt{v = z}, or}
+@item{@tt{A = Nat} and @tt{v = (s n)}, or}
+@item{@tt{A = A -> B'} and @tt{v = λx.e'}, or}
+@item{@tt{A = Bool} and @tt{v = true}, or}
+@item{@tt{A = Bool} and @tt{v = false}}
 ]
 
 Prove type safety, using the previous lemmas.
 This will not be an inductive proof; despite the generic meta-variables, we can
 build derivations by appealing to the previous lemmas.
 
-@emph{Theorem (Type Safety): If @tt{· ⊢ e : A} then @tt{eval(e) = o}.} 
+@emph{Theorem (Type Safety): If @tt{· ⊢ e} then @tt{eval(e) = o}.}
+
+
+Note that while we only care about type safety for top-level, observable
+results, we must strengthen the statements of progress and preservation to
+reason about arbitrary values.
+This is pretty much exclusively because of functions, which are values that
+contain a suspended computation, and are not observations.
+
+You'll also need a lemma about substitution for the function case of one of
+these lemmas.

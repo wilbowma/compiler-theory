@@ -17,3 +17,13 @@
 
 (define sub (curry elem #:style 'subscript))
 
+
+(define (theorem . rest)
+   (apply list (emph "Theorem: ") rest))
+
+(define (lemma . rest)
+  (apply list (emph "Lemma: ") rest))
+
+(define (proof . rest)
+   (apply list (emph "Proof: ") (list (nested #:style 'inset rest))))
+
